@@ -1,0 +1,4 @@
+package=com.cn.qpm.usermanage.model
+LoginUser=com.cn.qpm.usermanage.model.LoginUser
+#将LoginUser标签中的userid映射为成员变量
+LoginUser.alias.userid=id

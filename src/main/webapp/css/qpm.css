@@ -1,0 +1,6 @@
+
+/*调整body的宽度，留出空间给固定的导航栏*/
+body {
+	  padding-top: 80px;
+	  padding-bottom: 80px;
+	}
