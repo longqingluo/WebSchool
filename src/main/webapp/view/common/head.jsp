@@ -10,16 +10,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <c:set var="ctx" value="<%=path %>" scope="request" />
 
-<!-- *********************我的JS和CSS文件*************************** -->
-<link rel="stylesheet" type="text/css" href="<%=path %>/css/qpm.css">
+
 
 
 <!-- *****************第三方 框架和插件 ****************************** -->
 <!-- bootstrap V3 -->
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<!-- *********************我的JS和CSS文件*************************** -->
+<link rel="stylesheet" type="text/css" href="<%=path %>/css/qpm.css">
 
 <script type="text/javascript">
 		//定义一些js的全局变量

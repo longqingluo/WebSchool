@@ -34,7 +34,7 @@ public class LoginController {
 		 */
 		LoginUser loginUser = userService.checkLogin(email, password);
 		if (loginUser != null){
-			response.sendRedirect(requset.getContextPath()+"/view/framework/loginsuccess.jsp");
+			response.sendRedirect(requset.getContextPath()+"/view/framework/dashboard.jsp");
 		} else {
 			response.sendRedirect(requset.getContextPath()+"/view/login.jsp");
 		}

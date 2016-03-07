@@ -5,7 +5,7 @@
   <artifactId>qpmssm</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>qpmssm Maven Webapp</name>
+  <name>WebSchool</name>
   <url>http://maven.apache.org</url>
  
   <properties>  
@@ -194,6 +194,6 @@
     
   </dependencies>
   <build>
-    <finalName>qpmssm</finalName>
+    <finalName>WebSchool</finalName>
   </build>
 </project>

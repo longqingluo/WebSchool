@@ -10,9 +10,10 @@
                         http://www.springframework.org/schema/mvc    
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
                         
-	<!-- 测试 Xbean的工作--> 
+	<!-- 测试 Xbean的工作 
 	 <bean class="com.cn.qpm.framework.processor.XbeanTestProcesser" />  
-	              
+	 -->
+
 	              
 	              
 	              
