@@ -5,7 +5,7 @@
   <artifactId>qpmssm</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>qpmssm Maven Webapp</name>
+  <name>WebSchool</name>
   <url>http://maven.apache.org</url>
  
   <properties>  
@@ -36,6 +36,20 @@
         <artifactId>xbean-spring</artifactId>  
         <version>3.7</version>  
     </dependency>
+    
+    <!-- 国内已mybatis大侠编写的一个关于mybatis分页插件 -->
+    <dependency>
+	    <groupId>com.github.pagehelper</groupId>
+	    <artifactId>pagehelper</artifactId>
+	    <version>4.1.2</version>
+	</dependency>
+	
+	<!-- 那位大侠编写的另外一个神器，通用mapper -->
+	<dependency>
+	    <groupId>tk.mybatis</groupId>
+	    <artifactId>mapper</artifactId>
+	    <version>3.3.6</version>
+	</dependency>
     
     
     <!-- 导入java ee jar 包 -->
@@ -194,6 +208,6 @@
     
   </dependencies>
   <build>
-    <finalName>qpmssm</finalName>
+    <finalName>WebSchool</finalName>
   </build>
 </project>
