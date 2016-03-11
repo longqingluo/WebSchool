@@ -5,7 +5,7 @@
     version="3.0">
   <display-name>Archetype Created Web Application</display-name>
   
-  <!-- Spring和Mybatis的配置文件 -->
+  
   <context-param>
   	<param-name>contextConfigLocation</param-name>
   	<param-value>
@@ -14,8 +14,11 @@
   			<!-- spring设置和扩展 -->
   			classpath:spring/spring-applicationContext.xml,
   			
-  			<!-- Xbean解析xml 测试 -->
-  			classpath:spring/spring-xbean-test.xml
+  			<!-- 测试dashboard -->
+  			classpath:spring/dashboard/dashboard-demo.xml
+  			
+  			<!-- webSchool项目中的实体配置信息（我都不知道自己再说什么...haha）   -->
+  			classpath:spring/Spring-webSchool-entry.xml
   			
   			
   	</param-value>

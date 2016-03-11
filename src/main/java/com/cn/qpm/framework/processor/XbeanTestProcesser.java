@@ -3,6 +3,7 @@ package com.cn.qpm.framework.processor;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 
+import com.cn.qpm.framework.dashboard.model.DashboardEntry;
 import com.cn.qpm.usermanage.model.LoginUser;
 
 /**
@@ -17,8 +18,8 @@ public class XbeanTestProcesser implements BeanPostProcessor {
 	public Object postProcessAfterInitialization(Object bean, String beanName)
 			throws BeansException {
 		
-		if (bean instanceof LoginUser){
-			System.out.println("从xml文件中读取到bean" + ((LoginUser)bean).toString());
+		if (bean instanceof DashboardEntry){
+			System.out.println("从xml文件中读取到bean" + ((DashboardEntry)bean).toString());
 		}
 		
 		return bean;

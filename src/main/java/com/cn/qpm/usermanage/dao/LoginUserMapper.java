@@ -1,5 +1,7 @@
 package com.cn.qpm.usermanage.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 import com.cn.qpm.usermanage.model.LoginUser;
@@ -18,4 +20,6 @@ public interface LoginUserMapper {
     int updateByPrimaryKey(LoginUser record);
     
     LoginUser selectByLoginMess(@Param("email")String email, @Param("password")String password);
+    
+    List<LoginUser> selectall();
 }

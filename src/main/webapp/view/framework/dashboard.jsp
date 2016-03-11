@@ -1,10 +1,24 @@
+<%@page import="org.apache.commons.lang.StringUtils"%>
+<%@page import="com.cn.qpm.framework.dashboard.model.TopNarPoint"%>
+<%@page import="com.cn.qpm.framework.dashboard.model.DashboardFactory"%>
+<%@page import="com.cn.qpm.framework.dashboard.model.DashboardEntry"%>
+<%@page import="com.cn.qpm.usermanage.model.LoginUser"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="qpm" tagdir="/WEB-INF/tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%
+	/*获取用户信息和对应该权限的控制台实体信息，这个.jsp将会把这个控制台信息翻译过来，形成页面*/
+  	LoginUser user = (LoginUser)request.getSession().getAttribute(LoginUser.class.getName());
+  	//out.write(user.toString());
+  	DashboardEntry entry = DashboardFactory.getInstance().getDashboardEntry(user.getAuthority());
+ %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
     
-    <title>登陆测试成功页面</title>
+    <title><%="WebSchool-"+user.getName()+"-控制台" %></title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -13,6 +27,8 @@
 	<meta http-equiv="description" content="This is my page">
 	<jsp:include page="/view/common/head.jsp"></jsp:include>
   </head>
+  
+  
   
   <body>
   	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -24,18 +40,34 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          
+          <a class="navbar-brand" href="#">
+          	<span class="<%=entry.getIcon()%>" ></span>
+         	 WebSchool
+          </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+        
+          <ul class="nav navbar-nav navbar-left">
+          	<!-- 作为扩展点 -->
+          	<%for (TopNarPoint point : entry.getTopkids()){ %>
+          	
+          		<li><a href="<%=point.getUrl() %>">
+          		<%if(StringUtils.isNotBlank(point.getIcon())){
+          			out.write("<span class=\""+point.getIcon()+"\"></span>");
+          		}%>
+          		<%=point.getTitle() %>
+          		</a>
+          	<%} %>
+          	
+          </ul>
+        
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Dashboard</a></li>
             <li><a href="#">Settings</a></li>
             <li><a href="#">Profile</a></li>
             <li><a href="#">Help</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
         </div>
       </div>
     </nav>
@@ -52,9 +84,9 @@
                     </li>
                     <li>
                         <a href="#systemSetting" class="nav-header collapsed" data-toggle="collapse">
-                            <i class="glyphicon glyphicon-cog"></i>
+                           <i class="glyphicon glyphicon-cog"></i>
                           	  系统管理
-                               <span class="pull-right glyphicon glyphicon-chevron-down"></span>
+                       	        <span class="pull-right glyphicon glyphicon-chevron-down"></span>
                         </a>
                         <ul id="systemSetting" class="nav nav-list collapse secondmenu" style="height: 0px;">
                             <li><a href="#"><i class="glyphicon glyphicon-user"></i>用户管理</a></li>
@@ -65,10 +97,20 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="./plans.html">
+                        <a href="#物料管理" class="nav-header collapsed" data-toggle="collapse">
                             <i class="glyphicon glyphicon-credit-card"></i>
                           	  物料管理        
                         </a>
+                        <ul id="物料管理" class="nav nav-list collapse secondmenu">
+                        	<li><a href="#a" data-toggle="collapse">
+                        			<i class="glyphicon glyphicon-user"></i>
+                        			用户管理
+                        		</a>
+                        		<ul id="a" class="nav nav-list collapse secondmenu">
+                        			<li><a>aaa</a></li>
+                        		</ul>
+                        	</li>
+                        </ul>
                     </li>
 
                     <li>
