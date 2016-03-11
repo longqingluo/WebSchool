@@ -9,15 +9,11 @@
                         http://www.springframework.org/schema/context/spring-context-3.1.xsd    
                         http://www.springframework.org/schema/mvc    
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
-                        
-	<!-- 测试 Xbean的工作 
-	 <bean class="com.cn.qpm.framework.processor.XbeanTestProcesser" />  
-	 -->
-
-	              
-	              
-	              
-	<!-- XML文件热加载      使用JDK ScheduledExecutorService的定时任务配置 -->
+     
+    <!-- 为SpringUtil注入ApplicationContext -->
+	<bean id="appContext" class="com.cn.qpm.framework.util.SpringUtil" lazy-init="false" />                    
+	 
+	<!-- XML热加载 begin      使用JDK ScheduledExecutorService的定时任务配置 -->
 	<!-- ScheduledThreadPoolExecutor集成工厂 -->
 	<bean class="org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean" lazy-init="false">
 		<property name="continueScheduledExecutionAfterException" value="true" />
@@ -40,5 +36,8 @@
 	</bean>
 	
 	<bean id="executorJob" class="com.cn.qpm.framework.springdynaload.SpringBeanReloadJob" />
+	<!-- XML热加载 end -->
+	
+
 
 </beans>
