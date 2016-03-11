@@ -36,9 +36,6 @@ public class DashboardProcessor implements BeanPostProcessor {
 					ExceptionUtil.throwRuntimeException("控制台实体"+beanName+"未设定Authority!");
 				}
 				String auth = boardEntry.getAuthority();
-				if (boardFactory.getBoardEntryMap().containsKey(auth)){
-					ExceptionUtil.throwRuntimeException("authority为"+auth+"的控制台实体被重复建立");
-				}
 				boardFactory.getBoardEntryMap().put(auth, boardEntry);
 			} catch (Exception e){
 				e.printStackTrace();
