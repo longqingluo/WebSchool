@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://xbean.apache.org/schemas/spring/1.0"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+    xmlns:db="java://com.cn.qpm.framework.dashboard.model"  
+    xsi:schemaLocation="http://xbean.apache.org/schemas/spring/1.0 classpath:/org/apache/xbean/spring/spring-beans.xsd">  
+    
+    <!-- 控制台demo -->
+    <db:DashboardEntry id="demodashboard" authority="0" title="demoDashboard"
+    	icon="glyphicon glyphicon-duplicate">
+    
+    	<!-- Spring翻译 -->
+    	<db:topkids>
+    		<db:TopNarPoint title="测试的top导航1" url="wwww.i.am.url.com"
+    			icon="glyphicon glyphicon-duplicate"></db:TopNarPoint>
+    		<db:TopNarPoint title="测试的top导航2" url="www.i.am.url.com"
+    			icon="glyphicon glyphicon-duplicate"></db:TopNarPoint>
+    	</db:topkids>
+    	<db:sidekids>
+    		<db:Barpoint title="barpointtest" type="url" url="http://www.baidu.com"></db:Barpoint>
+    		<db:Barpoint title="barpointtest2" type="url" url="http://www.baidu.com"></db:Barpoint>
+    	</db:sidekids> 
+    	   
+    </db:DashboardEntry>
+    
+</beans>  
