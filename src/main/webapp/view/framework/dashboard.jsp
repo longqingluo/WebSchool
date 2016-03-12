@@ -1,3 +1,5 @@
+<%@page import="com.cn.qpm.framework.util.DashBoarHtmlUtil"%>
+<%@page import="com.cn.qpm.framework.dashboard.model.Barpoint"%>
 <%@page import="org.apache.commons.lang.StringUtils"%>
 <%@page import="com.cn.qpm.framework.dashboard.model.TopNarPoint"%>
 <%@page import="com.cn.qpm.framework.dashboard.model.DashboardFactory"%>
@@ -75,6 +77,19 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
+          
+          			<!-- 扩展侧边下拉框 -->
+          			<%
+          				Barpoint root = new Barpoint();
+          				root.setType("root");
+          				root.setTitle("parent");
+          				//把实体中的侧边下拉框提供一个根，使之成为一个树，然后再使用中序遍历对树进行构造
+          				for (Barpoint point : entry.getSidekids()){
+							root.getKids().add(point);
+          				}
+          				DashBoarHtmlUtil.printSaidBar(root, out);
+          			 %>
+          			 <!--  
           <ul id="main-nav" class="nav nav-tabs nav-stacked" style="">
                     <li class="active">
                         <a href="#">
@@ -135,6 +150,7 @@
                     </li>
 
                 </ul>
+                -->
         </div>
         
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

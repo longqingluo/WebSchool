@@ -1,6 +1,7 @@
 
 package com.cn.qpm.framework.dashboard.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -18,12 +19,14 @@ public class Barpoint {
 	//li的icon标签
 	private String icon;
 
-	//Barpoint的类型：可选："url"/"father"  是一个url类型。直接跳转，或者是一个包含下拉菜单的父节点
-	private String type;
+	//Barpoint的类型：可选："parent"/"leave"  
+	//配置为parent父节点的将可以在在面添加子菜单，这时配置url是无效的
+	//(默认值)配置为leave叶子节点，即可以为选项添加url，并调用JS对iframe进行src的设定
+	private String type = "leave";
 	
 	private String url;
 	
-	private List<Barpoint> kids;
+	private List<Barpoint> kids = new ArrayList<Barpoint>();
 
 	public String getTitle() {
 		return title;

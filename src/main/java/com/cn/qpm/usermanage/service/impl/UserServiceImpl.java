@@ -65,7 +65,8 @@ public class UserServiceImpl implements IUserService {
 		 */
 		DashboardEntry entry = DashboardFactory.getInstance().getDashboardEntry(user.getAuthority());
 		
-		System.out.println(entry);
+		
+		//System.out.println(entry);
 		
 		return user;
 				
