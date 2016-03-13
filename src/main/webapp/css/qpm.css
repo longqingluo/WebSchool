@@ -54,6 +54,7 @@ body {
     z-index: 1000;
     display: block;
     padding: 0px;
+    padding-top:20px;
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
     background-color: #f5f5f5;
@@ -82,7 +83,6 @@ body {
 /*
  * Main content
  */
-
 .main {
   padding: 20px;
 }
@@ -127,24 +127,14 @@ body {
 
 
 #main-nav.nav-tabs.nav-stacked > li > a {
-    padding: 10px 8px;
+	margin:0px;
+    padding: 10px 20px;
     font-size: 14px;
     /*font-weight: 600;	字体加粗*/	
     color: #428BCA;		/*a标签中的字体颜色*/
     background: #F5F5F5;
-    /*下面添加了渐变的效果*/
-    /*
-    background: -moz-linear-gradient(top, #FAFAFA 0%, #38b1c7 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FAFAFA), color-stop(100%,#38b1c7));
-    background: -webkit-linear-gradient(top, #FAFAFA 0%,#38b1c7 100%);
-    background: -o-linear-gradient(top, #FAFAFA 0%,#38b1c7 100%);
-    background: -ms-linear-gradient(top, #FAFAFA 0%,#38b1c7 100%);
-    background: linear-gradient(top, #FAFAFA 0%,#38b1c7 100%);
-    */
-    
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA', endColorstr='#38b1c7');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA', endColorstr='#38b1c7')";
-    
     /*border: 1px solid #D5D5D5;*/
     border-radius: 0px;
 }
@@ -160,32 +150,19 @@ body {
 #main-nav.nav-tabs.nav-stacked > li.active > a{
     color: #FFF;
     background: #428BCA;
-    /*
-    background: -moz-linear-gradient(top, #4A515B 0%, #3C4049 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4A515B), color-stop(100%,#3C4049));
-    background: -webkit-linear-gradient(top, #4A515B 0%,#3C4049 100%);
-    background: -o-linear-gradient(top, #4A515B 0%,#3C4049 100%);
-    background: -ms-linear-gradient(top, #4A515B 0%,#3C4049 100%);
-    background: linear-gradient(top, #4A515B 0%,#3C4049 100%);
-    */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4A515B', endColorstr='#3C4049');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#4A515B', endColorstr='#3C4049')";
-    /*border-color: #2B2E33;*/
 }
 
-#main-nav.nav-tabs.nav-stacked > li.active > a:hover{
-	color: #FFF;
-    background: #428BCA;
-}
           
-/*一级菜单hover的情况*/
-       #main-nav.nav-tabs.nav-stacked > li > a:hover{
-       	color: #0072e3;
-		background-color: #dceaf5;
-		/*border:1px;*/
+/*定义菜单hover和active的情况*/
+#main-nav.nav-tabs.nav-stacked li > a:hover,#main-nav.nav-tabs.nav-stacked a.active{
+     color: #FFF;
+	 background-color: #428BCA;
+	 /*border:1px;*/
 }
 
-#main-nav.nav-tabs.nav-stacked > li.active > a, #main-nav.nav-tabs.nav-stacked > li > a:hover > span {
+#main-nav li.active > a, #main-nav.nav-tabs.nav-stacked > li > a:hover > span {
     color: #FFF;
 }
 
@@ -194,8 +171,11 @@ body {
 }
 
 /*定义二级菜单样式*/
-.secondmenu a {
-	background: #ebf3fc;
+
+.secondmenu > li > a {
+	margin:1px;
+	padding: 10px 25px;
+	background: #f5f5f5;
     font-size: 12px;
     color: #244197;
     text-align: left;
@@ -203,15 +183,5 @@ body {
 
 /*定义子级菜单相对右移*/
 #main-nav ul{
-	padding-left: 50px
-}
-  
-  
-/*继续定义二级菜单被选择的样式*/
-.navbar-brand {
-    background: url('') no-repeat 10px 8px;
-    display: inline-block;
-    vertical-align: middle;
-    padding-left: 50px;
-    color: #fff;
+	padding-left: 30px
 }

@@ -1,4 +1,4 @@
-<%@page import="com.cn.qpm.framework.util.DashBoarHtmlUtil"%>
+<%@page import="com.cn.qpm.framework.util.DashBoardHtmlUtil"%>
 <%@page import="com.cn.qpm.framework.dashboard.model.Barpoint"%>
 <%@page import="org.apache.commons.lang.StringUtils"%>
 <%@page import="com.cn.qpm.framework.dashboard.model.TopNarPoint"%>
@@ -8,6 +8,11 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="qpm" tagdir="/WEB-INF/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 
 <%
 	/*获取用户信息和对应该权限的控制台实体信息，这个.jsp将会把这个控制台信息翻译过来，形成页面*/
@@ -77,7 +82,6 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-          
           			<!-- 扩展侧边下拉框 -->
           			<%
           				Barpoint root = new Barpoint();
@@ -87,70 +91,9 @@
           				for (Barpoint point : entry.getSidekids()){
 							root.getKids().add(point);
           				}
-          				DashBoarHtmlUtil.printSaidBar(root, out);
+          				//下面是构建
+          				DashBoardHtmlUtil.printSaidBar(root, out);
           			 %>
-          			 <!--  
-          <ul id="main-nav" class="nav nav-tabs nav-stacked" style="">
-                    <li class="active">
-                        <a href="#">
-                            <i class="glyphicon glyphicon-th-large"></i>
-                          	  首页         
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#systemSetting" class="nav-header collapsed" data-toggle="collapse">
-                           <i class="glyphicon glyphicon-cog"></i>
-                          	  系统管理
-                       	        <span class="pull-right glyphicon glyphicon-chevron-down"></span>
-                        </a>
-                        <ul id="systemSetting" class="nav nav-list collapse secondmenu" style="height: 0px;">
-                            <li><a href="#"><i class="glyphicon glyphicon-user"></i>用户管理</a></li>
-                            <li><a href="#"><i class="glyphicon glyphicon-th-list"></i>菜单管理</a></li>
-                            <li><a href="#"><i class="glyphicon glyphicon-asterisk"></i>角色管理</a></li>
-                            <li><a href="#"><i class="glyphicon glyphicon-edit"></i>修改密码</a></li>
-                            <li><a href="#"><i class="glyphicon glyphicon-eye-open"></i>日志查看</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#物料管理" class="nav-header collapsed" data-toggle="collapse">
-                            <i class="glyphicon glyphicon-credit-card"></i>
-                          	  物料管理        
-                        </a>
-                        <ul id="物料管理" class="nav nav-list collapse secondmenu">
-                        	<li><a href="#a" data-toggle="collapse">
-                        			<i class="glyphicon glyphicon-user"></i>
-                        			用户管理
-                        		</a>
-                        		<ul id="a" class="nav nav-list collapse secondmenu">
-                        			<li><a>aaa</a></li>
-                        		</ul>
-                        	</li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="./grid.html">
-                            <i class="glyphicon glyphicon-globe"></i>
-                            	分发配置
-                            <span class="label label-warning pull-right">5</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="./charts.html">
-                            <i class="glyphicon glyphicon-calendar"></i>
-                          	  图表统计
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="glyphicon glyphicon-fire"></i>
-                            	关于系统
-                        </a>
-                    </li>
-
-                </ul>
-                -->
         </div>
         
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -159,4 +102,7 @@
       </div>
     </div>
   </body>
+  
+  <script src="<%=path %>/js/dashborad.js"></script>
+  
 </html>

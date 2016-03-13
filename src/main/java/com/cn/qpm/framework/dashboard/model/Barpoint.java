@@ -4,6 +4,8 @@ package com.cn.qpm.framework.dashboard.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.cn.qpm.framework.context.WebSchoolContext;
+
 /*
  * 侧边导航sidebar的节点元素
  * 其实，这就是一个<li>的标签模型，它可以递归的应用于各种的<li>，它可以包含一个List<Barpoint>以此完成下级菜单栏
@@ -53,7 +55,8 @@ public class Barpoint {
 	}
 
 	public String getUrl() {
-		return url;
+		String path = WebSchoolContext.getHttpServletRequest().getContextPath();
+		return url.replace(":{path}", path);
 	}
 
 	public void setUrl(String url) {

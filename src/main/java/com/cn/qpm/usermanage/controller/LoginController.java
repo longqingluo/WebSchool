@@ -28,7 +28,7 @@ public class LoginController {
 	@Resource(name = "userService")
 	private IUserService userService;
 	
-	/*
+	
 	@RequestMapping(value = "login", method = RequestMethod.POST)
 	@ResponseBody
 	public void logincheck(String email, String password,
@@ -40,26 +40,6 @@ public class LoginController {
 			response.sendRedirect(requset.getContextPath()+"/view/login.jsp");
 		}
 	}
-	*/
 	
-	@RequestMapping(value="login", method=RequestMethod.POST)
-	public ModelAndView logincheck(String email, String password,
-			HttpServletRequest request, HttpServletResponse response) throws Exception {
-		ModelAndView mav = new ModelAndView("framework/dashboard");
-		LoginUser loginUser = userService.checkLogin(email, password);
-		if (null == loginUser){
-			response.sendRedirect(request.getContextPath()+"/view/login.jsp");
-		}
-		
-		mav.addObject("user",loginUser);
-		/*
-		 * addObject(loginUser) --->${loginUser.name}
-		 * addObject("user",loginUser) ----->${user.name}
-		 */
-		
-		
-		return mav;
-	}
-
 
 }

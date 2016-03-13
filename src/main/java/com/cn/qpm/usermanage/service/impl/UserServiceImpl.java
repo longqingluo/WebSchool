@@ -60,14 +60,6 @@ public class UserServiceImpl implements IUserService {
 		PageHelper.startPage(1, 3);
 		List<LoginUser> users =  (Page<LoginUser>) this.loginUserMapper.selectall();
 		
-		/*
-		 * 测试一下控制台实体的信息
-		 */
-		DashboardEntry entry = DashboardFactory.getInstance().getDashboardEntry(user.getAuthority());
-		
-		
-		//System.out.println(entry);
-		
 		return user;
 				
 	}

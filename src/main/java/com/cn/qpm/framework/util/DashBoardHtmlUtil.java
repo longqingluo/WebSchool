@@ -13,7 +13,7 @@ import com.cn.qpm.framework.dashboard.model.Barpoint;
  * author wenkangqiang
  * date   2016年3月13日
  */
-public class DashBoarHtmlUtil {
+public class DashBoardHtmlUtil {
 	
 	/**
 	 * 通过中序遍历构造Bar
@@ -46,7 +46,7 @@ public class DashBoarHtmlUtil {
 			out.write("</ul>\n");         
 		} else if("leave".equals(root.getType())){
 			StringBuilder code = new StringBuilder();
-			code.append("<li>\n <a class=\"sideBarleave\" href=\"").append(root.getUrl()).append("\">\n")
+			code.append("<li>\n <a class=\"sideBarleave\" href=\"#\" url=\"").append(root.getUrl()).append("\">\n")
 			.append("<i class=\"").append(root.getIcon()).append("\"></i>\n")
 			.append(root.getTitle())
 			.append("\n</a>\n </li>\n");
