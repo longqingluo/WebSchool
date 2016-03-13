@@ -34,7 +34,7 @@
     				 title="二级导航2" type="leave" url="##"/>
     			</db:kids>
     		</db:Barpoint>
-    		<db:Barpoint title="侧导航3" type="leave" 
+    		<db:Barpoint title="侧导航4" type="leave" 
     			icon="glyphicon glyphicon-duplicate" url="##"></db:Barpoint>
     	</db:sidekids> 
     	   

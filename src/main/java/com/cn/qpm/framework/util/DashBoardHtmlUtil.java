@@ -36,7 +36,7 @@ public class DashBoardHtmlUtil {
 			.append(" class=\"nav-header collapsed\" data-toggle=\"collapse\">\n")
 			.append(" <i class=\"").append(root.getIcon()).append("\"></i>\n")
 			.append(root.getTitle())
-			.append(" \n<span class=\"pull-right glyphicon glyphicon-chevron-down\"></span>\n</a>\n")
+			.append(" \n<span class=\"pull-right glyphicon glyphicon-menu-right\"></span>\n</a>\n")
 			.append(" <ul id=\"").append(root.getTitle()).append("_sidebar\"")
 			.append(" class=\"nav nav-list collapse secondmenu\" style=\"height: 0px;\">\n");
 			out.println(code.toString());
